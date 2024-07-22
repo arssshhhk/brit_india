@@ -1,0 +1,726 @@
+/* styles.scss */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #0056b3;
+  --header-color: #333;
+  --background-color: #000;
+  --text-color: #333;
+  --heading-font: "Montserrat", sans-serif;
+  --paragraph-font: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--paragraph-font);
+  color: var(--primary-color);
+  background: var(--background-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  font-size: 3.5vw;
+  line-height: 0.8;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  left: 0;
+}
+header nav {
+  padding: 20px 0;
+  margin: 0 3.5vw;
+  height: 80px;
+}
+header nav a {
+  color: var(--primary-color);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+#home1 {
+  min-height: 100vh;
+  padding: 20px calc(7.5vw + 5px);
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+}
+#home1 h2 {
+  max-width: 900px;
+  line-height: 1.2;
+}
+#home1 .scroller {
+  padding-top: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+}
+#home1 .scroller-inner {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  animation: scroll 20s linear infinite;
+}
+#home1 .scroller-inner img {
+  width: 100px;
+  align-self: center;
+  height: auto;
+  margin: 0 10px;
+  filter: grayscale(100%);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#explore {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* Scroll Animation */
+  /* Infinite scroll keyframes */
+}
+#explore .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  transform: rotate(20deg);
+}
+#explore .scroll-container {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#explore .scroll-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#explore .scroll-item img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+#explore .scroll-container {
+  animation: scroll-up 30s linear infinite;
+}
+#explore .reverse {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transform: rotate(20deg);
+  animation: scroll-down 35s linear infinite;
+}
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+#explore .foreground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: transparent;
+}
+#explore .foreground h1 {
+  font-size: 3.5vw;
+  color: var(--primary-color);
+}
+
+#home4 {
+  min-height: 100vh;
+  padding: 20px calc(3.5vw + 5px);
+  flex-direction: column;
+  gap: 100px;
+  border-bottom: 1px solid var(--primary-color);
+}
+#home4 .home-content {
+  background: var(--background-color);
+  position: relative;
+  width: 100%;
+  border-top: 1px solid var(--primary-color);
+  margin-top: 50px;
+  color: var(--primary-color);
+}
+#home4 .home-content .left-side {
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 20px;
+}
+#home4 .home-content .left-side div {
+  width: 100px;
+}
+#home4 .home-content .left-side div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#home4 .home-content .content {
+  width: 70%;
+  margin: 0 auto;
+  flex-direction: column;
+  padding-top: 20px;
+  height: 100%;
+  gap: 30px;
+  text-align: left;
+  align-items: start;
+}
+#home4 .home-content .content .top-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+#home4 .home-content .content .top-content .left {
+  display: flex;
+  gap: 50px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: start;
+}
+#home4 .home-content .content .top-content .left p {
+  display: block;
+  line-height: 1.4;
+}
+#home4 .home-content .content .top-content .right {
+  align-items: start;
+  gap: 30px;
+  flex-direction: column;
+}
+#home4 .home-content .content .top-content .right .img-div {
+  width: 350px;
+}
+#home4 .home-content .content .top-content .right .img-div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#home4 .home-content .content .bottom-content {
+  height: 50%;
+}
+#home4 .home-content .content .bottom-content .img-div {
+  width: 350px;
+}
+#home4 .home-content .content .bottom-content .img-div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#innovation {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 100px;
+  gap: 50px;
+}
+#innovation .video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+#innovation .video-container video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#innovation .content {
+  background: var(--primary-color);
+  color: var(--background-color);
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 70px 40px;
+  flex-direction: column;
+  gap: 50px;
+}
+#innovation .content p {
+  font-size: 16px;
+  font-weight: bold;
+}
+#innovation .content .img-div {
+  width: 450px;
+}
+#innovation .content .img-div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#why {
+  flex-direction: column;
+  padding: 0px calc(3.5vw + 5px);
+  margin-top: 100px;
+  gap: 100px;
+}
+#why .why-content {
+  height: 90vh;
+  display: flex;
+  width: 100%;
+  gap: 100px;
+}
+#why .why-content .left-side {
+  width: 40%;
+}
+#why .why-content .left-side .video-container {
+  height: 100%;
+  width: 100%;
+}
+#why .why-content .left-side .video-container video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#why .why-content .right-side {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#why .why-content .right-side h2 {
+  margin-top: 30px;
+}
+#why .why-content .right-side .description {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+#interestedIn {
+  padding: 50px calc(3.5vw + 5px);
+  margin-top: 100px;
+  width: 100%;
+}
+#interestedIn h2 {
+  font-weight: 300;
+}
+#interestedIn form {
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  gap: 50px;
+  margin-top: 50px;
+}
+#interestedIn form .emailName {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+}
+#interestedIn form .emailName input {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 18px 0;
+  outline: none;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+#interestedIn form .emailName input::-moz-placeholder {
+  color: var(--primary-color);
+}
+#interestedIn form .emailName input::placeholder {
+  color: var(--primary-color);
+}
+#interestedIn form .aboutBuisness {
+  width: 100%;
+}
+#interestedIn form .aboutBuisness input {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 18px 0;
+  outline: none;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+#interestedIn form .aboutBuisness input::-moz-placeholder {
+  color: var(--primary-color);
+}
+#interestedIn form .aboutBuisness input::placeholder {
+  color: var(--primary-color);
+}
+#interestedIn form .buttonDiv {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+#interestedIn form .buttonDiv .submit {
+  background: var(--primary-color);
+  padding: 30px 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--background-color);
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 50px calc(3.5vw + 5px);
+  gap: 30px;
+  width: 100%;
+  margin-top: 100px;
+}
+#contact h1 {
+  font-size: 7.5vw;
+  font-weight: 300;
+  opacity: 0.5;
+  cursor: pointer;
+  margin: 30px 0;
+  transition: all ease 0.5s;
+}
+#contact h1:hover {
+  opacity: 1;
+}
+#contact .hyperlinks {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+#contact .top-content {
+  width: 100%;
+  display: flex;
+  border: 1px solid --primary-color;
+  justify-content: space-around;
+}
+#contact .top-content .careers, #contact .top-content .love, #contact .top-content .contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+#contact .top-content .careers .description, #contact .top-content .love .description, #contact .top-content .contact .description {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: start;
+}
+#contact .top-content .careers .icon img, #contact .top-content .love .icon img, #contact .top-content .contact .icon img {
+  width: 20px;
+}
+#contact .top-content .careers {
+  border: 1px solid var(--primary-color);
+  width: 100%;
+}
+#contact .top-content .love {
+  border: 1px solid var(--primary-color);
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+#contact .top-content .contact {
+  border: 1px solid var(--primary-color);
+  width: 100%;
+  justify-content: center;
+}
+#contact .top-content .contact .description {
+  align-items: start;
+}
+#contact .copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px;
+  border: 1px solid var(--primary-color);
+  width: 100%;
+}
+#contact .location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+#contact .location .description {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: start;
+}
+#contact .location .icon img {
+  width: 20px;
+}
+
+.faq {
+  position: relative;
+  width: 70%;
+  padding: 0px calc(3.5vw + 5px);
+  margin-top: 100px;
+  background: transparent;
+  color: white;
+}
+.faq .waveContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.faq .waveContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.faq .questions-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  width: 100%;
+}
+.faq .questions-container .item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.162);
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--primary-color);
+}
+.faq .questions-container .item .question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.faq .questions-container .item .question h4:last-child {
+  font-size: 2.5rem;
+  line-height: 0;
+}
+.faq .questions-container .item .question .plusIcon {
+  font-size: 16px;
+  font-weight: 100;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid var(--primary-color);
+  transition: all ease 500ms;
+}
+.faq .questions-container .item .answer {
+  font-size: 1rem;
+  line-height: 1.4;
+  display: none;
+  height: 0;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+  overflow: hidden;
+}
+.faq .questions-container .item .answer p {
+  animation: moving 500ms ease;
+}
+.faq .questions-container .item .answer.active {
+  display: flex;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@keyframes moving {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 8.5vw;
+    line-height: 1.2;
+  }
+  #home1 {
+    padding: 20px calc(3.5vw + 5px);
+  }
+  #home4 {
+    min-height: 100vh;
+    padding: 20px calc(3.5vw + 5px);
+    flex-direction: column;
+    gap: 50px;
+  }
+  #home4 .home-content {
+    position: relative;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  #home4 .home-content .left-side {
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+  }
+  #home4 .home-content .left-side div {
+    width: 70px;
+  }
+  #home4 .home-content .content {
+    width: 100%;
+  }
+  #home4 .home-content .content .top-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  #why {
+    margin-top: 50px;
+    gap: 50px;
+  }
+  #why .why-content {
+    height: 100vh;
+    flex-direction: column;
+  }
+  #why .why-content .left-side {
+    width: 100%;
+  }
+  #why .why-content .right-side {
+    width: 100%;
+  }
+  #why .why-content .right-side h2 {
+    margin-top: 20px;
+  }
+  #why .why-content .right-side .description {
+    margin-top: 20px;
+  }
+  #interestedIn {
+    padding: 50px calc(3.5vw + 5px);
+    margin-top: 50px;
+  }
+  #interestedIn form {
+    margin-top: 30px;
+    gap: 30px;
+  }
+  #interestedIn form .emailName {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  #interestedIn form .emailName input {
+    font-size: 18px;
+  }
+  #interestedIn form .aboutBuisness {
+    width: 100%;
+  }
+  #interestedIn form .aboutBuisness input {
+    font-size: 18px;
+    padding: 14px 0;
+  }
+  #contact {
+    margin-top: 50px;
+    gap: 20px;
+  }
+  #contact h1 {
+    margin: 10px 0;
+  }
+  #contact .top-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #contact .top-content .love {
+    justify-content: center;
+  }
+  #contact .top-content .contact {
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+  #contact .top-content .contact .description {
+    justify-content: start;
+  }
+  .faq .questions-container .item .question {
+    gap: 30px;
+    font-size: 18px;
+    letter-spacing: 0px;
+  }
+  .faq .questions-container .item .question h4:last-child {
+    font-size: 2.5rem;
+    line-height: 0;
+  }
+  .faq .questions-container .item .question .plusIcon {
+    font-size: 24px !important;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+  }
+}
